@@ -26,8 +26,8 @@ export const loginController = async (req, res) => {
     // xss ve csrf için cookie parser ile token set edildi
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      secure: true,
+      sameSite: "None",
       maxAge: 1000 * 60 * 60 * 8,
     });
     // client e json döndürüldü

@@ -11,10 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:5173"
-        : "https://employee-r.onrender.com",
+    origin: "https://employee-r.onrender.com",
     credentials: true,
   })
 );

@@ -14,7 +14,7 @@ app.use(
     origin:
       process.env.NODE_ENV === "development"
         ? "http://localhost:5173"
-        : "https://frontend.onrender.com",
+        : "https://employee-r.onrender.com",
     credentials: true,
   })
 );

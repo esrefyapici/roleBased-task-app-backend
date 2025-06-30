@@ -9,12 +9,15 @@ import { connectDb } from "./config/db.js";
 dotenv.config();
 const app = express();
 
-app.use(
-  cors({
-    origin: "https://employee-r.onrender.com",
-    credentials: true,
-  })
-);
+const corsOptions = {
+  origin:
+    process.env.NODE_ENV === "development"
+      ? process.env.DEV_ORIGIN
+      : process.env.PROD_ORIGIN,
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
 
